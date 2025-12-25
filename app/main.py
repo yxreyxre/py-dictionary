@@ -97,5 +97,7 @@ class Dictionary:
             return default
 
     def clear(self) -> None:
-        for cell in self._cells:
-            None
+        self._cells = [None] * 8
+        self.capacity = len(self._cells)
+        self._threshold = 2 / 3 * self.capacity
+        self.length = 0
